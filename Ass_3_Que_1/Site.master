@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content-area {
+            padding: 20px;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: #534f4f;
+            color: white;
+        }
+
+            .header h1 {
+                font-size: 40px;
+            }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .topnav a:hover {
+                    background-color: gray;
+                    color: black;
+                }
+
+                .topnav a.active {
+                    background-color: gray;
+                    color: white;
+                }
+
+        .footer {
+            position: page;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            height: 141px;
+        }
+    </style>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="header">
+            <h1>Student Management System (Disconnected Architechture) </h1>
+        </div>
+        <div>
+            <div class="topnav">
+                <a class="active" href="#">Add Student</a>
+                <a href="#">Update Student</a>
+                <a href="#">Delete Student</a>
+                <a href="#">Find Student By Name</a>
+                <a href="#">List Out Student By Year</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <p>Copyright@2021 - Student Management System </p>
+        </div>
+    </div></form>
+</body>
+</html>

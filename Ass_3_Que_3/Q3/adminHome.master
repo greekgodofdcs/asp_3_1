@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminHome.master.cs" Inherits="adminHome" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row mt-3">
+                <div class="col-2 h-100 ">
+                    <div class="container alert-info" style="height:100%">
+                        <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" Width="222px">
+                        <Nodes >
+                            <asp:TreeNode NavigateUrl="~/Home.aspx" Text="Home" Value="Home" ToolTip="Home" ></asp:TreeNode>
+                            <asp:TreeNode Text="Add Details" Value="Add">
+                                <asp:TreeNode NavigateUrl="~/AddCourse.aspx" Text="Add Course" Value="course"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/AddClass.aspx" Text="Add Class" Value="class"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/AddStudent.aspx" Text="Add Student" Value="student"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/ShowStudData.aspx" Text="Student Data" Value="studData" ToolTip="Student Data"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/delStud.aspx" Text="Delete Student" Value="delete" ToolTip="Delete Student"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/findStud.aspx" Text="Find Student" Value="find" ToolTip="Find Student by Name and Course"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/listStudentbyBirthYear.aspx" Text="List Student Birth Year Wise" Value="list" ToolTip="List Student by Birth Year"></asp:TreeNode>
+                        </Nodes>
+                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" CssClass="text-black-50"  HorizontalPadding="15px" NodeSpacing="0px" VerticalPadding="10px" Font-Bold="True" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
